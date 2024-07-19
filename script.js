@@ -1,3 +1,43 @@
+let isDesktop = window.innerWidth > 768;
+function splitTextIntoSpansByChars(elementId, charLimit) {
+  // Get the element by ID
+  const element = document.getElementById(elementId);
+
+  if (!element) {
+    console.error(`Element with ID ${elementId} not found.`);
+    return;
+  }
+
+  // Get the text content of the element
+  const text = element.innerText;
+
+  // Split the text into words
+  const words = text.split(" ");
+
+  // Initialize variables
+  let result = "";
+  let spanContent = "";
+
+  // Iterate through words and build spans based on character limit
+  words.forEach((word) => {
+    // Check if adding the new word exceeds the character limit
+    if (spanContent.length + word.length + 1 > charLimit) {
+      // Close the current span and start a new one
+      result += `<h3><span class="text">${spanContent.trim()}</span> <h3>`;
+      spanContent = "";
+    }
+    // Add the word to the current span
+    spanContent += word + " ";
+  });
+
+  // Add the last span content
+  if (spanContent) {
+    result += `<h3><span class="text">${spanContent.trim()}</span> <h3>`;
+  }
+
+  // Set the innerHTML of the element to the result with spans
+  element.innerHTML = result.trim();
+}
 function locomotiveScroll() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -77,11 +117,39 @@ function page1Effect() {
     autoAlpha: 0,
     delay: 3,
   });
+  tl2.from(
+    ".page1 .playreel img",
+    {
+      scale: 0,
+    },
+    "abs"
+  );
+  tl2.from(
+    ".page1 .playreel .content",
+    {
+      y: 40,
+    },
+    "abs"
+  );
+  tl2.from(
+    ".page1 .scroll",
+    {
+      y: 40,
+      delay: 0.3,
+    },
+    "abs"
+  );
 }
 function page2Effect() {
+  if (isDesktop) {
+    splitTextIntoSpansByChars("page2-text", 50);
+  } else {
+    splitTextIntoSpansByChars("page2-text", 30);
+  }
   let page2 = document.querySelector(".page2");
   let text = document.querySelectorAll(".page2 .text");
   let hr = document.querySelector(".page2 hr");
+
   gsap.from(text, {
     duration: 1,
     scrollTrigger: {
@@ -123,6 +191,11 @@ function page3Effect() {
   });
 }
 function page4Effect() {
+  if (isDesktop) {
+    splitTextIntoSpansByChars("page4-text", 50);
+  } else {
+    splitTextIntoSpansByChars("page4-text", 30);
+  }
   let page2 = document.querySelector(".page4");
   let text = document.querySelectorAll(".page4 .text");
   let hr = document.querySelector(".page4 hr");
@@ -198,6 +271,11 @@ function page5Effect() {
   });
 }
 function page7Effect() {
+  if (isDesktop) {
+    splitTextIntoSpansByChars("page7-text", 50);
+  } else {
+    splitTextIntoSpansByChars("page7-text", 30);
+  }
   let page2 = document.querySelector(".page7");
   let text = document.querySelectorAll(".page7 .text");
   let hr = document.querySelector(".page7 hr");
@@ -229,13 +307,32 @@ function swiperConfig() {
   let swiper = new Swiper(".myswiper", {
     slidesPerView: 4.3,
     spaceBetween: 30,
-    centeredSlide: true,
     loop: true,
+    centerSlide: true,
+    breakpoints: {
+      0: {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+      },
+      768: {
+        slidesPerView: 2.3,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1440: {
+        slidesPerView: 4.3,
+        spaceBetween: 30,
+      },
+    },
   });
 }
 function loader() {
   let loader = document.querySelector(".loader");
   let loaderText = document.querySelectorAll(".loader h3");
+  let headerlogo = document.querySelectorAll("header .text");
   let tl = gsap.timeline();
   tl.from(loaderText, {
     x: 40,
@@ -250,6 +347,11 @@ function loader() {
   tl.to(loader, {
     duration: 1,
     autoAlpha: 0,
+  });
+  tl.from(headerlogo, {
+    x: 30,
+    autoAlpha: 0,
+    stagger: 0.1,
   });
 }
 if (gsap) {

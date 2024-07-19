@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
             integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
             crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="style.css">
     </head>
 
@@ -17,9 +20,14 @@
         <main class="main">
             <header>
                 <h3>
-                    <a href="#">The Venture Agency.</a>
+                    <a href="#">
+                        <span class="text">The </span>
+                        <span class="text">Venture </span>
+                        <span class="text">Agency.</span>
+                    </a>
                 </h3>
-                <button class="btn-menu link">Menu</button>
+                <button class="desktop link">Menu</button>
+                <button class="mobile btn-site">Menu</button>
             </header>
             <div class="loader">
                 <div class="text">
@@ -36,7 +44,7 @@
                 </div>
                 <video src="./video/banner.mp4" autoplay loop muted></video>
                 <div class="page1-content">
-                    <h1>
+                    <h1 class="desktop-flex">
                         <span>r</span>
                         <span>e</span>
                         <span>j</span>
@@ -46,6 +54,22 @@
                         <span>c</span>
                         <span>e</span>
                     </h1>
+                    <div class="mobile bottom-wrap">
+                        <div class="playreel">
+                            <img src="./img/reel-poster.webp" alt="">
+                            <div class="content">
+                                <div class="left">
+                                    <i class="fa-solid fa-play"></i>
+                                    Play Reem
+                                </div>
+                                <div class="time">-2:00</div>
+                            </div>
+                        </div>
+                        <div class="scroll">
+                            <i class="fa-solid fa-arrow-down-long"></i>
+                            &nbsp; Scroll
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -57,11 +81,11 @@
                 <hr>
                 <div class="body">
 
-                    <h3> <span class="text">We are a venture firm and digital agency. Our </span></h3>
-                    <h3> <span class="text">mission is to transform founders' visions into</span></h3>
-                    <h3> <span class="text"> remarkable brands. Choose traditional </span></h3>
-                    <h3> <span class="text">compensation or an equity offset through our </span></h3>
-                    <h3> <span class="text">Venture Model — your vision, your decision. </span></h3>
+                    <div id="page2-text"> We are a venture firm and digital agency. Our
+                        mission is to transform founders' visions into
+                        remarkable brands. Choose traditional
+                        compensation or an equity offset through our
+                        Venture Model — your vision, your decision.</div>
                 </div>
             </div>
             <div class="page page3">
@@ -103,13 +127,13 @@
                 </div>
                 <hr>
                 <div class="body">
+                    <div id="page4-text">
 
-                    <h3> <span class="text"> We partner with up to 5 clients each year. </span></h3>
-                    <h3> <span class="text">This allows intense focus on the transformation </span></h3>
-                    <h3> <span class="text"> and launch of your brand by our very best team, </span></h3>
-                    <h3> <span class="text">which is the only team we have. We specialize in </span></h3>
-                    <h3> <span class="text">working with startups that are revolutionizing </span></h3>
-                    <h3> <span class="text">their industries. </span></h3>
+                        We partner with up to 5 clients each year. This allows intense focus on the
+                        transformation and launch of your brand by our very best team, which is the only team we
+                        have. We specialize in working with startups that are revolutionizing their industries.
+                    </div>
+
                 </div>
             </div>
             <div class="page page5">
@@ -143,12 +167,12 @@
                 </div>
                 <hr>
                 <div class="body">
+                    <div id="page7-text">
 
-                    <h3> <span class="text"> Data matters, yet it’s the emotion that drives </span></h3>
-                    <h3> <span class="text">buying decisions. We don’t believe in ‘one size fits </span></h3>
-                    <h3> <span class="text"> all.’ We craft unique brand experiences that </span></h3>
-                    <h3> <span class="text">deeply resonate with your audience and boost </span></h3>
-                    <h3> <span class="text">your KPIs.</span></h3>
+                        Data matters, yet it’s the emotion that drives buying decisions. We don’t
+                        believe in ‘one size fits all.’ We craft unique brand experiences that deeply resonate with
+                        your audience and boost your KPIs.
+                    </div>
                 </div>
             </div>
             <div class="page page6">
