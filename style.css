@@ -1,0 +1,153 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: NBInternationalProBoo;
+}
+html,
+body {
+  height: 100%;
+  background-color: #faf8f3;
+}
+a {
+  color: inherit;
+  text-decoration: unset;
+}
+@font-face {
+  font-family: NBInternationalProBoo;
+  src: url(./font/NBInternationalProBoo.woff2);
+}
+@font-face {
+  font-family: Rejouice;
+  src: url(./font/Rejouice-Headline.woff2);
+}
+button {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  font-size: 1.2vw;
+}
+.page {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.page1 video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.page1-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.7vw 3vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  color: white;
+  pointer-events: none;
+}
+header h3 {
+  font-size: max(1.4vw, 14px);
+  font-weight: 100;
+  pointer-events: all;
+}
+header button {
+  color: white;
+  position: relative;
+  font-size: max(1.4vw, 14px);
+
+  padding-inline: 0;
+  pointer-events: all;
+  cursor: pointer;
+}
+header button::after {
+  content: "";
+  height: 0.1rem;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.3s;
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+header button:hover::after {
+  transform: scaleX(100%);
+  transform-origin: left;
+}
+.page1-content h1 {
+  font-size: 27vw;
+  color: white;
+  line-height: 1;
+  font-size: 100;
+  font-family: Rejouice;
+}
+.cursor {
+  height: 7.5vw;
+  width: 7.5vw;
+  background-color: rgba(1, 1, 1, 0.534);
+  border-radius: 50%;
+  position: fixed;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: scale 300ms;
+  translate: -50% -50%;
+}
+
+.cursor h5 {
+  font-size: 1.1vw;
+  pointer-events: none;
+  color: white;
+}
+
+.page2 {
+  padding: 4vw 3vw;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8vw 0;
+  overflow: hidden;
+}
+.head p {
+  font-size: 1.65vw;
+  font-size: max(1.65vw, 14px);
+
+  font-weight: normal;
+}
+.page2 h3 {
+  font-size: 4.2vw;
+  font-weight: lighter;
+  padding-top: 1vw;
+  overflow: hidden;
+}
+.page2 h3:first-child:before {
+  content: "";
+  width: 7.5vw;
+  height: 1cap;
+  display: inline-block;
+}
+.page2 h3 span {
+  display: inline-block;
+}
