@@ -100,6 +100,18 @@ header h3 {
   line-height: 1;
   font-size: 100;
   font-family: Rejouice;
+  display: flex;
+  padding-bottom: 4vw;
+}
+.page1-content h1 span {
+  display: inline-block;
+  font: inherit;
+}
+.page1 .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  z-index: 2;
 }
 .cursor {
   height: 7.5vw;
@@ -280,4 +292,222 @@ header h3 {
 }
 .box:hover img {
   opacity: 0;
+}
+.page4 {
+  padding: 3vw;
+}
+.page4 p {
+  display: flex;
+  flex-direction: column;
+}
+.page4 .body {
+  padding-top: 1vw;
+}
+.page4 h3 {
+  font-size: 4.15vw;
+  line-height: 1.1;
+  font-weight: 100;
+  display: block;
+  overflow: hidden;
+}
+.page4 h3:first-child:before {
+  content: "";
+  width: 7.5vw;
+  height: 1cap;
+  display: inline-block;
+}
+.page4 h3 span {
+  display: inline-block;
+}
+.page5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  translate: 0 0;
+}
+.page5 video {
+  height: 120%;
+  object-fit: cover;
+  object-position: center;
+}
+.page5 svg {
+  position: absolute;
+  height: 65%;
+  inset: 0;
+  margin: auto;
+}
+.page5-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.page5-content h3 {
+  font-weight: 100;
+  font-size: 4vw;
+}
+.page5-content h4 {
+  font-size: 1.6vw;
+  font-weight: 100;
+}
+.page5 .cursor {
+  background-color: black;
+}
+.page6 {
+  padding: 3vw;
+  min-height: 60vh;
+  height: auto;
+}
+.page6 .link {
+  color: black;
+}
+.page6 .arrow {
+  transform: scaleX(-1);
+  font-size: 1.6vw;
+}
+.page6 .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 2vw;
+}
+.page6 .link {
+  font-size: 1.8vw;
+}
+.page6-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 0.3vw;
+}
+
+.page6-top h2 {
+  font-size: 10vw;
+  line-height: 1;
+  font-family: Rejouice;
+  font-weight: 400;
+}
+.page6 img {
+  width: 100%;
+}
+
+.page7 {
+  padding: 3vw;
+  min-height: 70vh;
+}
+.page7 p {
+  display: flex;
+  flex-direction: column;
+}
+.page7 .body {
+  padding-top: 1vw;
+}
+.page7 h3 {
+  font-size: 4.15vw;
+  line-height: 1.1;
+  font-weight: 100;
+  display: block;
+  overflow: hidden;
+}
+.page7 h3:first-child:before {
+  content: "";
+  width: 7.5vw;
+  height: 1cap;
+  display: inline-block;
+}
+.page7 h3 span {
+  display: inline-block;
+}
+.swiper-container {
+  margin-top: -4%;
+  margin-inline: -3vw;
+}
+
+.swiper-wrapper {
+  align-items: flex-end;
+}
+.page8 {
+  min-height: 40vh;
+  padding: 5vw;
+}
+.page8-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.page8-content h2 {
+  font-size: 4.2vw;
+  font-weight: 100;
+  padding-top: 1vw;
+  overflow: hidden;
+  width: max-content;
+  position: relative;
+}
+.page8-content h3 {
+  display: flex;
+  gap: 10px;
+}
+.page8-content .arrow {
+  rotate: -90deg;
+}
+
+.page8 h2 span::after,
+.page8 h2 span::before {
+  content: "";
+  height: 0.2rem;
+  background-color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: -0.8vw;
+  /* transition: transform 2s cubic-bezier(0.43, 0.195, 0.02, 1); */
+  transition: transform 0.5s 0.1s cubic-bezier(0.43, 0.195, 0.02, 1);
+  width: 100%;
+  transform-origin: 100% 0;
+  z-index: -1;
+}
+
+.page8 h2 span::before {
+  transform: scaleX(0) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.page8 h2:hover span::before {
+  transform: scaleX(1) translateZ(0);
+  transform-origin: 0 0;
+  transition: transform 0.5s 0.1s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.page8 h2 span::after {
+  transform: scaleX(1) translateZ(0);
+  transform-origin: 0% 0;
+}
+.page8 h2:hover span::after {
+  transform: scaleX(0) translateZ(0);
+  transform-origin: 100% 0;
+  transition: transform 0.5s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.loader {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+  color: white;
+  display: grid;
+  place-items: center;
+}
+.loader h3 {
+  font-size: 3vw;
+}
+.loader .text {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
