@@ -7,6 +7,7 @@
 html,
 body {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
   background-color: #faf8f3;
 }
 a {
@@ -28,7 +29,7 @@ button {
   font-size: 1.2vw;
 }
 .page {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
   z-index: 1;
@@ -40,7 +41,7 @@ button {
   position: absolute;
 }
 .page1-content {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   position: relative;
   z-index: 10;
@@ -67,7 +68,7 @@ header h3 {
   font-weight: 100;
   pointer-events: all;
 }
-header button {
+.link {
   color: white;
   position: relative;
   font-size: max(1.4vw, 14px);
@@ -76,7 +77,7 @@ header button {
   pointer-events: all;
   cursor: pointer;
 }
-header button::after {
+.link::after {
   content: "";
   height: 0.1rem;
   background-color: white;
@@ -89,7 +90,7 @@ header button::after {
   transform-origin: right;
 }
 
-header button:hover::after {
+.link:hover::after {
   transform: scaleX(100%);
   transform-origin: left;
 }
@@ -112,6 +113,7 @@ header button:hover::after {
   align-items: center;
   transition: scale 300ms;
   translate: -50% -50%;
+  scale: 0;
 }
 
 .cursor h5 {
@@ -121,7 +123,9 @@ header button:hover::after {
 }
 
 .page2 {
-  padding: 4vw 3vw;
+  padding: 4vw 3vw 6vw;
+  height: auto;
+  min-height: auto;
 }
 .head {
   display: flex;
@@ -150,4 +154,130 @@ header button:hover::after {
 }
 .page2 h3 span {
   display: inline-block;
+}
+.page3 {
+  padding: 15vw 3vw 3vw;
+}
+.page3-top {
+  text-align: center;
+}
+.page3-top h4 {
+  margin-bottom: 1vw;
+  font-size: 1vw;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+}
+.page3-top h2 {
+  font-size: 4vw;
+  font-weight: lighter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  font-weight: 100;
+}
+
+.page3-top h2 span {
+  font-weight: 100;
+  text-shadow: -2px -2px 1px #faf8f3, 2px -2px 1px #faf8f3, 2px 2px 1px #faf8f3,
+    -2px 2px 1px #faf8f3;
+}
+.page3-top h4 span {
+  font-size: 0.7vw;
+  background-color: black;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 50vmax;
+}
+.page3-top .arrow {
+  rotate: -90deg;
+}
+
+.page3-top h2 span::after,
+.page3-top h2 span::before {
+  content: "";
+  height: 0.2rem;
+  background-color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: -0.8vw;
+  /* transition: transform 2s cubic-bezier(0.43, 0.195, 0.02, 1); */
+  transition: transform 0.5s 0.1s cubic-bezier(0.43, 0.195, 0.02, 1);
+  width: 100%;
+  transform-origin: 100% 0;
+  z-index: -1;
+}
+
+.page3-top h2 span::before {
+  transform: scaleX(0) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.page3-top h2:hover span::before {
+  transform: scaleX(1) translateZ(0);
+  transform-origin: 0 0;
+  transition: transform 0.5s 0.1s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.page3-top h2 span::after {
+  transform: scaleX(1) translateZ(0);
+  transform-origin: 0% 0;
+}
+.page3-top h2:hover span::after {
+  transform: scaleX(0) translateZ(0);
+  transform-origin: 100% 0;
+  transition: transform 0.5s cubic-bezier(0.43, 0.195, 0.02, 1);
+}
+.page3-element-top {
+  margin-top: 8vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1vw;
+}
+.page3-element-top h3 {
+  font-size: 1.6vw;
+  font-weight: 100;
+}
+.page3-element-top a {
+  font-size: 1.4vw;
+  color: black;
+  font-weight: 100;
+}
+.page3-element-top a::after {
+  background-color: black;
+}
+.page3-element-top .right {
+  display: flex;
+  gap: 10px;
+}
+.page3-element-top .arrow {
+  font-size: 1.4vw;
+  transform: scaleX(-1);
+}
+.page3-element {
+  /* height: 75vh; */
+  display: flex;
+  justify-content: space-between;
+}
+.page3-element .box {
+  width: 32%;
+  height: 100%;
+  position: relative;
+}
+.page3-element .box img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 500ms opacity;
+}
+.page3-element .box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.box:hover img {
+  opacity: 0;
 }

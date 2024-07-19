@@ -66,10 +66,12 @@ function page2Effect() {
     scrollTrigger: {
       trigger: page2,
       start: "15% bottom",
+      end: "15% bottom",
       scroller: ".main",
       toggleActions: "play none reverse reset",
     },
     y: 300,
+    stagger: 0.1,
     opacity: 1,
   });
   gsap.from(hr, {
@@ -83,8 +85,25 @@ function page2Effect() {
     width: 0,
   });
 }
+function page3Effect() {
+  let page3top = document.querySelector(".page3-top");
+  let page3topspan = document.querySelectorAll(".page3-top h2 span");
+  gsap.from(page3topspan, {
+    duration: 1,
+    scrollTrigger: {
+      trigger: page3top,
+      start: "top bottom",
+      end: "top bottom",
+      scroller: ".main",
+      toggleActions: "play none reverse reset",
+    },
+    y: 300,
+    opacity: 0,
+  });
+}
 if (gsap) {
   cursorEffect();
   locomotiveScroll();
   page2Effect();
+  page3Effect();
 }
