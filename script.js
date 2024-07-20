@@ -49,7 +49,6 @@ function locomotiveScroll() {
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
-
   // tell ScrollTrigger to use these proxy methods for the ".main" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy(".main", {
     scrollTop(value) {
@@ -309,6 +308,12 @@ function swiperConfig() {
     spaceBetween: 30,
     loop: true,
     centerSlide: true,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    speed: 5000,
+    freeMode: true,
     breakpoints: {
       0: {
         slidesPerView: 1.5,
@@ -326,6 +331,32 @@ function swiperConfig() {
         slidesPerView: 4.3,
         spaceBetween: 30,
       },
+    },
+  });
+}
+function page8Effect() {
+  let text = document.querySelector(".page8 h2 span");
+  gsap.from(text, {
+    duration: 1,
+    y: 300,
+    scrollTrigger: {
+      trigger: ".page8",
+      start: "20% bottom",
+      end: "20% bottom",
+      scroller: ".main",
+      toggleActions: "play none reverse reset",
+    },
+  });
+}
+function footerEffect() {
+  gsap.from(".footer-bottom h3 span", {
+    y: "-100%",
+    stagger: 0.1,
+    scrollTrigger: {
+      trigger: ".footer-bottom",
+      start: "top bottom",
+      scroller: ".main",
+      toggleActions: "play none reverse reset",
     },
   });
 }
@@ -364,5 +395,7 @@ if (gsap) {
   page5Effect();
   page7Effect();
   swiperConfig();
+  page8Effect();
+  footerEffect();
   loader();
 }

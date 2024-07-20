@@ -482,7 +482,7 @@ header .text {
   align-items: flex-end;
 }
 .page8 {
-  min-height: 40vh;
+  min-height: 35vh;
   padding: 5vw;
 }
 .page8-content {
@@ -510,6 +510,9 @@ header .text {
 }
 .page8-content .arrow {
   rotate: -90deg;
+}
+.page8 h2 span {
+  display: inline-block;
 }
 
 .page8 h2 span::after,
@@ -576,6 +579,62 @@ header .text {
   border: 1px solid white;
   border-radius: 50vmax;
 }
+
+.footer {
+  background-color: black;
+  color: white;
+  padding: 3vw;
+}
+.footer .left h3 {
+  margin-top: 20px;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+.footer ul {
+  list-style: none;
+}
+.footer .right {
+  margin-top: 40px;
+  gap: 3vw;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .right a {
+  padding-block: 5px;
+  display: flex;
+  font-size: max(14px, 1.2vw);
+  gap: 5px;
+  width: max-content;
+}
+.footer .arrow {
+  rotate: -45deg;
+}
+.footer-middle {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-middle .location ul {
+  margin-bottom: 30px;
+}
+.footer-bottom {
+  overflow: hidden;
+  height: 24vw;
+}
+.footer-bottom h3 {
+  font-size: 26vw;
+  line-height: 1;
+  font-family: Rejouice;
+  display: flex;
+  gap: 2px;
+}
+.footer-bottom h3 span {
+  display: inline-block;
+  line-height: 1;
+  font: inherit;
+  margin-top: -5vw;
+}
 @media (min-width: 768px) {
   .mobile {
     display: none !important;
@@ -601,5 +660,18 @@ header .text {
   }
   .page6-top {
     padding-bottom: 0.3vw;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer .btn-site {
+    padding: 15px 30px;
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .footer-middle {
+    margin-top: 10vw;
+    /* margin-bottom: -2vw; */
   }
 }
